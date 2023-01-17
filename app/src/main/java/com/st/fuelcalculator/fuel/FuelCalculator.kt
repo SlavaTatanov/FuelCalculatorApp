@@ -6,18 +6,21 @@ package com.st.fuelcalculator.fuel
  * количество километров, расход на 100 км, стоимость за литр, и опционально количество людей
  */
 class FuelCalculator(
-    private val km: Float,
-    private val cons: Float,
-    private val cost: Float,
+    private val km: Double,
+    private val cons: Double,
+    private val cost: Double,
     private val people: Int = 1
 ) {
 
-    private val result = calculating()
+    /**
+     * Результат расчета, атрибут
+     */
+    private val result= calculating()
 
     /**
      * Функция выполняющая расчет
      */
-    private fun calculating ():Float {
+    private fun calculating ():Double {
         var res = ((cons / 100) * km) * cost
         if (people != 1) {
             res /= people
