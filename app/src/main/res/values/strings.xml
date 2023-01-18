@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FuelCalculator</string>
+    <string name="peoplesInt">1</string>
 </resources>

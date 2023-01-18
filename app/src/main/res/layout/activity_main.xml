@@ -108,7 +108,49 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Количество человек"
+                android:gravity="center"
+                android:textSize="16sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPeopleMinus"
+                    style="@style/ButtonPeople"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    app:cornerRadius="20dp"
+                    app:icon="@drawable/ic_sharp_arrow_back_24"
+                    />
+
+                <TextView
+                    android:id="@+id/peopleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:text="@string/peoplesInt"/>
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/ButtonPeople"
+                    android:id="@+id/btnPeoplePlus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    app:cornerRadius="20dp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -125,7 +167,7 @@
             android:id="@+id/btn_calc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="45dp"
+            android:layout_margin="40dp"
             android:text="Расчет"
             />
 
