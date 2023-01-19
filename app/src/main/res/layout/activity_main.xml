@@ -130,8 +130,11 @@
                     android:layout_height="match_parent"
                     android:layout_weight="0.3"
                     app:cornerRadius="20dp"
-                    app:icon="@drawable/ic_sharp_arrow_back_24"
-                    />
+                    app:icon="@drawable/ic_baseline_keyboard_double_arrow_left_24"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:iconPadding="0dp"
+                    android:drawablePadding="0dp"/>
 
                 <TextView
                     android:id="@+id/peopleTextView"
@@ -148,7 +151,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.3"
-                    app:cornerRadius="20dp"/>
+                    app:cornerRadius="20dp"
+                    app:icon="@drawable/ic_baseline_keyboard_double_arrow_right_24"
+                    android:layout_gravity="center"
+                    app:iconPadding="0dp"
+                    android:drawablePadding="0dp"/>
 
             </LinearLayout>
 

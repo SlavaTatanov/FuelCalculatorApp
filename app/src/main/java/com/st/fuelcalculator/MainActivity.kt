@@ -11,56 +11,83 @@ import com.st.fuelcalculator.fuel.FuelCalculator
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var btnCalc: Button
+    private lateinit var btnSave: Button
+    private lateinit var btnPeopleMinus: Button
+    private lateinit var btnPeoplePlus: Button
+    private lateinit var editTextKm: EditText
+    private lateinit var editTextCons: EditText
+    private lateinit var editTextPrice: EditText
+    private lateinit var textViewPeople: TextView
+    private lateinit var textViewResult: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnCalc: Button = findViewById(R.id.btn_calc)
-        val btnSave: Button = findViewById(R.id.btn_save)
-        val btnPeopleMinus: Button = findViewById(R.id.btnPeopleMinus)
-        val btnPeoplePlus: Button = findViewById(R.id.btnPeoplePlus)
+        /*
+        Блок назначающий глобальныи переменным их значения из интерфейса
+         */
+        btnCalc= findViewById(R.id.btn_calc)
+        btnSave = findViewById(R.id.btn_save)
+        btnPeopleMinus = findViewById(R.id.btnPeopleMinus)
+        btnPeoplePlus = findViewById(R.id.btnPeoplePlus)
+        editTextKm = findViewById(R.id.editTextKm)
+        editTextCons = findViewById(R.id.editTextCons)
+        editTextPrice = findViewById(R.id.editTextPrice)
+        textViewPeople = findViewById(R.id.peopleTextView)
+        textViewResult = findViewById(R.id.textViewResult)
 
+        /*
+        Блок устанавливает слушателей
+         */
         btnCalc.setOnClickListener { result(btnSave) }
         btnPeopleMinus.setOnClickListener { peopleTextViewChange(-1) }
         btnPeoplePlus.setOnClickListener { peopleTextViewChange(1) }
+        btnSave.setOnClickListener { secret() }
 
         }
 
     /**
+     * Выполняет основной расчет.
      * Функция обрабатывающая нажатие клавиши расчет. Создает экземпляр класса FuelCalculator
      * и вызывает его метод calculatingStr получая строку с результатом.
      * Результат записывается в TextView. Выводит кнопку сохранить,
      * предлагая юзеру сохранить расчет.
      */
     private fun result (btnSave: Button) {
-        val km = findViewById<EditText>(R.id.editTextKm).text.toString().toDouble()
-        val cons = findViewById<EditText>(R.id.editTextCons).text.toString().toDouble()
-        val price = findViewById<EditText>(R.id.editTextPrice).text.toString().toDouble()
-        val people = findViewById<TextView>(R.id.peopleTextView).text.toString().toInt()
+        val km = editTextKm.text.toString().toDouble()
+        val cons = editTextCons.text.toString().toDouble()
+        val price = editTextPrice.text.toString().toDouble()
+        val people = textViewPeople.text.toString().toInt()
         val res = FuelCalculator(km, cons, price, people).calculatingStr()
-        findViewById<TextView>(R.id.textViewResult).text = res
+        textViewResult.text = res
         btnSave.visibility = View.VISIBLE
-        btnSave.setOnClickListener { secret(findViewById<Button>(R.id.btn_calc)) }  // Надо заменить обработчик
     }
 
-    private fun secret (btnSave: Button) {
-        btnSave.visibility = View.INVISIBLE
+    private fun secret () {
+        btnCalc.visibility = View.INVISIBLE
     }
 
+    /**
+     * Изменяет количество людей, если оно меньше 1 то оставляет как есть
+     * шаг - 1
+     */
     private fun peopleTextViewChange (people: Int) {
-        val peopleTextView = findViewById<TextView>(R.id.peopleTextView)
-        var res = peopleTextView.text.toString().toInt()
+        var res = textViewPeople.text.toString().toInt()
         if (peopleChecking(people)) {
             res += people
             if (res >= 1) {
-                peopleTextView.text = res.toString()
+                textViewPeople.text = res.toString()
             }
         }
     }
 
+    /**
+     * Проверяет что входящее значение 1 либо -1
+     */
     private fun peopleChecking (people: Int): Boolean {
         return (people == 1 || people == -1)
     }
-
-    }
+}
