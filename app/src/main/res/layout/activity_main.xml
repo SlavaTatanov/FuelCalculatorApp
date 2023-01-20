@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/design_default_color_on_primary"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -54,7 +54,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_weight="0.15"
-        android:paddingTop="50dp"
+        android:paddingTop="10dp"
         android:paddingStart="30dp"
         android:paddingEnd="30dp">
 
@@ -69,8 +69,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextKm"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                style="@style/EditDec" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,8 +84,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextCons"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                style="@style/EditDec"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,8 +99,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPrice"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                style="@style/EditDec"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,7 +124,6 @@
                     android:id="@+id/btnPeopleMinus"
                     style="@style/ButtonPeople"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
                     android:layout_weight="0.3"
                     app:cornerRadius="20dp"
                     app:icon="@drawable/ic_baseline_keyboard_double_arrow_left_24"
@@ -137,7 +133,7 @@
                     android:drawablePadding="0dp"/>
 
                 <TextView
-                    android:id="@+id/peopleTextView"
+                    android:id="@+id/textViewPeople"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.3"
@@ -149,7 +145,6 @@
                     style="@style/ButtonPeople"
                     android:id="@+id/btnPeoplePlus"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
                     android:layout_weight="0.3"
                     app:cornerRadius="20dp"
                     app:icon="@drawable/ic_baseline_keyboard_double_arrow_right_24"
