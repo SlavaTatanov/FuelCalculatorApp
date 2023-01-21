@@ -30,19 +30,28 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * Выполняет основной расчет.
-     * Функция обрабатывающая нажатие клавиши расчет. Создает экземпляр класса FuelCalculator
-     * и вызывает его метод calculatingStr получая строку с результатом.
+     * Функция обрабатывающая нажатие клавиши расчет.
+     * Пытается: Создать экземпляр класса FuelCalculator
+     * и вызывать его метод calculatingStr получая строку с результатом.
+     * Если не вышло -> результат "Ошибка ввода"
      * Результат записывается в TextView. Выводит кнопку сохранить,
-     * предлагая юзеру сохранить расчет.
+     * предлагая юзеру сохранить расчет. Если расчет не корректный, скроет кнопку сохранить.
      */
     private fun result () {
-        val km = binding.editTextKm.text.toString().toDouble()
-        val cons = binding.editTextCons.text.toString().toDouble()
-        val price = binding.editTextPrice.text.toString().toDouble()
-        val people = binding.textViewPeople.text.toString().toInt()
-        val res = FuelCalculator(km, cons, price, people).calculatingStr()
+        val res: String = try {
+            val km = binding.editTextKm.text.toString().toDouble()
+            val cons = binding.editTextCons.text.toString().toDouble()
+            val price = binding.editTextPrice.text.toString().toDouble()
+            val people = binding.textViewPeople.text.toString().toInt()
+            FuelCalculator(km, cons, price, people).calculatingStr()
+        } catch (e: Exception) {
+            "Ошибка ввода"
+        }
         binding.textViewResult.text = res
-        binding.btnSave.visibility = View.VISIBLE
+        when (res) {
+            "Ошибка ввода" -> binding.btnSave.visibility = View.INVISIBLE
+            else -> binding.btnSave.visibility = View.VISIBLE
+        }
     }
 
     private fun secret () {

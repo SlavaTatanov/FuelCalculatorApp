@@ -16,7 +16,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -24,9 +27,7 @@
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:paddingStart="10dp"
                 android:textSize="20sp"
-                android:text="Цена: 350 руб.\nЛитров: 4.5"
                 />
 
             <LinearLayout
@@ -163,7 +164,7 @@
         android:layout_height="match_parent"
         android:layout_weight="0.3">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             style="@style/Button"
             android:background="@drawable/button"
             android:id="@+id/btn_calc"
