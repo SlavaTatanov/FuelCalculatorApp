@@ -45,11 +45,11 @@ class MainActivity : AppCompatActivity() {
             val people = binding.textViewPeople.text.toString().toInt()
             FuelCalculator(km, cons, price, people).calculatingStr()
         } catch (e: Exception) {
-            "Ошибка ввода"
+            getText(R.string.inputError).toString()
         }
         binding.textViewResult.text = res
         when (res) {
-            "Ошибка ввода" -> binding.btnSave.visibility = View.INVISIBLE
+            getText(R.string.inputError).toString() -> binding.btnSave.visibility = View.INVISIBLE
             else -> binding.btnSave.visibility = View.VISIBLE
         }
     }

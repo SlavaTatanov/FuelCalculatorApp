@@ -20,7 +20,8 @@
             android:layout_marginBottom="10dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
 
             <TextView
                 android:id="@+id/textViewResult"
@@ -41,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="20dp"
-                    android:text="Сохранить"
+                    android:text="@string/btnSave"
                     android:visibility="invisible"/>
 
             </LinearLayout>
@@ -65,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
-            android:hint="Расстояние"
+            android:hint="@string/distance"
             android:inputType="number">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -80,7 +81,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="Расход л/100км"
+            android:hint="@string/consumption"
             android:inputType="number">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -95,7 +96,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="Цена за литр топлива"
+            android:hint="@string/price"
             android:inputType="number">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -112,7 +113,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Количество человек"
+                android:text="@string/peoples"
                 android:gravity="center"
                 android:textSize="16sp"
                 />
@@ -171,7 +172,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="40dp"
-            android:text="Расчет"
+            android:text="@string/calculate"
             />
 
     </LinearLayout>
