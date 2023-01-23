@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FuelCalculator</string>
+    <string name="app_name">Топливный калькулятор</string>
     <string name="peoplesInt">1</string>
     <string name="btnSave">Сохранить</string>
     <string name="distance">Расстояние</string>
@@ -8,4 +8,5 @@
     <string name="peoples">Количество человек</string>
     <string name="calculate">Расчет</string>
     <string name="inputError">Ошибка ввода</string>
+    <string name="money">₽</string>
 </resources>

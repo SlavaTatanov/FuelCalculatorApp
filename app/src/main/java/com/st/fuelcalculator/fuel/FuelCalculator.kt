@@ -11,6 +11,11 @@ class FuelCalculator(
     private val cost: Double,
     private val people: Int = 1
 ) {
+    init {
+        require(km > 0) {"Неккоректное значение - км"}
+        require(cons > 0) {"Неккоректное значение - расход"}
+        require(cost > 0) {"Неккоректное значение - стоимость"}
+    }
 
     /**
      * Результат расчета, атрибут
@@ -33,6 +38,6 @@ class FuelCalculator(
      * Результат расчета
      */
     fun calculatingStr ():String {
-        return "${result.toInt().toString()} руб."
+        return result.toInt().toString()
     }
 }

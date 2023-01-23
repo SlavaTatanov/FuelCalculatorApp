@@ -43,8 +43,9 @@ class MainActivity : AppCompatActivity() {
             val cons = binding.editTextCons.text.toString().toDouble()
             val price = binding.editTextPrice.text.toString().toDouble()
             val people = binding.textViewPeople.text.toString().toInt()
-            FuelCalculator(km, cons, price, people).calculatingStr()
-        } catch (e: Exception) {
+            "${FuelCalculator(km, cons, price, people).calculatingStr()} " +
+                    "${getText(R.string.money)}"
+        } catch (e: IllegalArgumentException) {
             getText(R.string.inputError).toString()
         }
         binding.textViewResult.text = res

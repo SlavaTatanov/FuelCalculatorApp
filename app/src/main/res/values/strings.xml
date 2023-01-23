@@ -8,4 +8,5 @@
     <string name="peoples">Peoples</string>
     <string name="calculate">Calculate</string>
     <string name="inputError">Input Error</string>
+    <string name="money">$</string>
 </resources>
