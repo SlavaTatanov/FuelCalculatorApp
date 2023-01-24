@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.st.fuelcalculator.databinding.ActivityMainBinding
-import com.st.fuelcalculator.fuel.FuelCalculator
+import com.st.fuelcalculator.fuel.Fuel
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
     /**
      * Выполняет основной расчет.
      * Функция обрабатывающая нажатие клавиши расчет.
-     * Пытается: Создать экземпляр класса FuelCalculator
-     * и вызывать его метод calculatingStr получая строку с результатом.
+     * Пытается: Создать экземпляр класса Fuel
+     * и вызывать его атрибут result получая строку с результатом.
      * Если не вышло -> результат "Ошибка ввода"
      * Результат записывается в TextView. Выводит кнопку сохранить,
      * предлагая юзеру сохранить расчет. Если расчет не корректный, скроет кнопку сохранить.
@@ -43,8 +43,7 @@ class MainActivity : AppCompatActivity() {
             val cons = binding.editTextCons.text.toString().toDouble()
             val price = binding.editTextPrice.text.toString().toDouble()
             val people = binding.textViewPeople.text.toString().toInt()
-            "${FuelCalculator(km, cons, price, people).calculatingStr()} " +
-                    "${getText(R.string.money)}"
+            Fuel(km, cons, price, people, getText(R.string.money).toString()).result
         } catch (e: IllegalArgumentException) {
             getText(R.string.inputError).toString()
         }
@@ -80,3 +79,4 @@ class MainActivity : AppCompatActivity() {
         return (people == 1 || people == -1)
     }
 }
+
