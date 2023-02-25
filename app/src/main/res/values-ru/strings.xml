@@ -2,11 +2,14 @@
     <string name="app_name">Топливный калькулятор</string>
     <string name="peoplesInt">1</string>
     <string name="btnSave">Сохранить</string>
-    <string name="distance">Расстояние</string>
+    <string name="distance">Расстояние (км)</string>
     <string name="consumption">Расход л/100км</string>
     <string name="price">Цена за литр топлива</string>
     <string name="peoples">Количество человек</string>
     <string name="calculate">Расчет</string>
     <string name="inputError">Ошибка ввода</string>
     <string name="money">₽</string>
+    <string name="result">Результат:</string>
+    <string name="Null">0</string>
+    <string name="clear">Очистить</string>
 </resources>

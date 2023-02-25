@@ -2,7 +2,6 @@ package com.st.fuelcalculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.st.fuelcalculator.databinding.ActivityMainBinding
 import com.st.fuelcalculator.fuel.Fuel
 
@@ -24,8 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnCalc.setOnClickListener { result() }
         binding.btnPeopleMinus.setOnClickListener { peopleTextViewChange(-1) }
         binding.btnPeoplePlus.setOnClickListener { peopleTextViewChange(1) }
-        binding.btnSave.setOnClickListener { secret() }
-
+        binding.btnClear.setOnClickListener { clear() }
         }
 
     /**
@@ -48,14 +46,17 @@ class MainActivity : AppCompatActivity() {
             getText(R.string.inputError).toString()
         }
         binding.textViewResult.text = res
-        when (res) {
-            getText(R.string.inputError).toString() -> binding.btnSave.visibility = View.INVISIBLE
-            else -> binding.btnSave.visibility = View.VISIBLE
-        }
     }
 
-    private fun secret () {
-        binding.btnCalc.visibility = View.INVISIBLE
+    /**
+     * Выполняет очистку текстовых полей
+     */
+    private fun clear () {
+        arrayOf(binding.editTextKm, binding.editTextCons, binding.editTextPrice).forEach {
+            it.text = null
+            it.clearFocus()
+        }
+        binding.textViewResult.text = getString(R.string.Null)
     }
 
     /**

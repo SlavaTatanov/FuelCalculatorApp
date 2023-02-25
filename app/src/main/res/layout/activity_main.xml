@@ -1,182 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/design_default_color_on_primary"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textViewResultTitle"
+        android:text="@string/result"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="@string/Null"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewResultTitle"
+        app:layout_constraintStart_toStartOf="@+id/textViewResultTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResultTitle" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:ems="10"
+        android:hint="@string/distance"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextKm"
+            style="@style/EditDec"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:ems="10"
+        android:hint="@string/consumption"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextCons"
+            style="@style/EditDec" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:ems="10"
+        android:hint="@string/price"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPrice"
+            style="@style/EditDec" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/peoples"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPeopleMinus"
+        style="@style/ButtonPeople"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="25dp"
+        android:drawablePadding="0dp"
+        android:gravity="center"
+        app:cornerRadius="20dp"
+        app:icon="@drawable/ic_baseline_keyboard_double_arrow_left_24"
+        app:iconPadding="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPeoplePlus"
+        style="@style/ButtonPeople"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="25dp"
+        android:drawablePadding="0dp"
+        app:cornerRadius="20dp"
+        app:icon="@drawable/ic_baseline_keyboard_double_arrow_right_24"
+        app:iconPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textViewPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:gravity="center"
+        android:text="@string/peoplesInt"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPeopleMinus"
+        app:layout_constraintEnd_toStartOf="@+id/btnPeoplePlus"
+        app:layout_constraintStart_toEndOf="@+id/btnPeopleMinus"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
-
-            <TextView
-                android:id="@+id/textViewResult"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:textSize="20sp"
-                />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    style="@style/Button"
-                    android:background="@drawable/button"
-                    android:id="@+id/btn_save"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20dp"
-                    android:text="@string/btnSave"
-                    android:visibility="invisible"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:orientation="vertical"
-        android:layout_weight="0.15"
-        android:paddingTop="10dp"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp">
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:hint="@string/distance"
-            android:inputType="number">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextKm"
-                style="@style/EditDec" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="@string/consumption"
-            android:inputType="number">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextCons"
-                style="@style/EditDec"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="@string/price"
-            android:inputType="number">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextPrice"
-                style="@style/EditDec"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="@string/peoples"
-                android:gravity="center"
-                android:textSize="16sp"
-                />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnPeopleMinus"
-                    style="@style/ButtonPeople"
-                    android:layout_width="match_parent"
-                    android:layout_weight="0.3"
-                    app:cornerRadius="20dp"
-                    app:icon="@drawable/ic_baseline_keyboard_double_arrow_left_24"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    app:iconPadding="0dp"
-                    android:drawablePadding="0dp"/>
-
-                <TextView
-                    android:id="@+id/textViewPeople"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.3"
-                    android:gravity="center"
-                    android:textSize="30sp"
-                    android:text="@string/peoplesInt"/>
-
-                <com.google.android.material.button.MaterialButton
-                    style="@style/ButtonPeople"
-                    android:id="@+id/btnPeoplePlus"
-                    android:layout_width="match_parent"
-                    android:layout_weight="0.3"
-                    app:cornerRadius="20dp"
-                    app:icon="@drawable/ic_baseline_keyboard_double_arrow_right_24"
-                    android:layout_gravity="center"
-                    app:iconPadding="0dp"
-                    android:drawablePadding="0dp"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.3">
+        android:gravity="center"
+        app:layout_constraintHeight_max="200dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPeoplePlus">
 
         <com.google.android.material.button.MaterialButton
-            style="@style/Button"
-            android:background="@drawable/button"
             android:id="@+id/btn_calc"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="40dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
             android:text="@string/calculate"
-            />
+            app:cornerRadius="10dp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:text="@string/clear"
+            app:cornerRadius="10dp" />
     </LinearLayout>
 
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

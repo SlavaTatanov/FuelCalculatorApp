@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">燃油计算器</string>
+    <string name="distance">距离（公里)</string>
+    <string name="consumption">燃油消耗（升/百公里)</string>
+    <string name="price">每升油的价格</string>
+    <string name="calculate">计算</string>
+    <string name="result">结果:</string>
+    <string name="peoplesInt">1</string>
+    <string name="btnSave">保存</string>
+    <string name="peoples">人数</string>
+    <string name="Null">0</string>
+    <string name="clear">清除</string>
+</resources>

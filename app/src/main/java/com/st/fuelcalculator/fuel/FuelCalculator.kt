@@ -1,5 +1,7 @@
 package com.st.fuelcalculator.fuel
 
+import java.text.NumberFormat
+
 /**
  * Класс для расчета расхода топлива
  * Принимает:
@@ -47,10 +49,6 @@ class FuelCalculator(
     }
 }
 
-private class ResultFormatter(calculator: FuelCalculator, money: String) {
-    val result = "${calculator.result.toInt()} ${money}\n${calculator.liters}"
-}
-
 /**
  * Вычисляет цену на топливо и выполняет форматрирование результата
  */
@@ -59,8 +57,8 @@ data class Fuel(
     private val cons: Double,
     private val cost: Double,
     private val people: Int,
-    val money: String
+    private val money: String
 ) {
     private val fuel = FuelCalculator(km, cons, cost, people)
-    val result = ResultFormatter(fuel, money).result
+    val result: String = NumberFormat.getCurrencyInstance().format(fuel.result)
 }
