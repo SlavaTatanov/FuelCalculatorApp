@@ -2,15 +2,16 @@
     <!-- Base application theme. -->
     <style name="Theme.FuelCalculator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#649cf5</item>
+        <item name="colorPrimary">#a6b3e3</item>
         <item name="colorPrimaryVariant">#649cf5</item>
         <item name="colorOnPrimary">#1d3854</item>
+        <item name="android:windowBackground">#091645</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">#091645</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

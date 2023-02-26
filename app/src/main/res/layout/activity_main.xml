@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_on_primary"
     tools:context=".MainActivity">
 
     <TextView
@@ -31,13 +30,14 @@
         app:layout_constraintStart_toStartOf="@+id/textViewResultTitle"
         app:layout_constraintTop_toBottomOf="@+id/textViewResultTitle" />
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/space_result"
         android:layout_marginEnd="25dp"
         android:ems="10"
         android:hint="@string/distance"
@@ -59,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/space"
         android:layout_marginEnd="25dp"
         android:ems="10"
         android:hint="@string/consumption"
@@ -80,7 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/space"
         android:layout_marginEnd="25dp"
         android:ems="10"
         android:hint="@string/price"
@@ -98,8 +98,8 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="@dimen/people_height"
+        android:layout_marginTop="@dimen/space_people"
         android:gravity="center"
         android:text="@string/peoples"
         android:textSize="16sp"
@@ -109,7 +109,7 @@
         android:id="@+id/btnPeopleMinus"
         style="@style/ButtonPeople"
         android:layout_width="100dp"
-        android:layout_height="80dp"
+        android:layout_height="@dimen/pepole_btn"
         android:layout_gravity="center"
         android:layout_marginStart="25dp"
         android:drawablePadding="0dp"
@@ -124,7 +124,7 @@
         android:id="@+id/btnPeoplePlus"
         style="@style/ButtonPeople"
         android:layout_width="100dp"
-        android:layout_height="80dp"
+        android:layout_height="@dimen/pepole_btn"
         android:layout_gravity="center"
         android:layout_marginEnd="25dp"
         android:drawablePadding="0dp"
@@ -154,7 +154,7 @@
         android:paddingBottom="20dp"
         android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintHeight_max="200dp"
+        app:layout_constraintHeight_max="180dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         app:layout_constraintBottom_toBottomOf="parent"

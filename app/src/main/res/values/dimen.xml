@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space">10dp</dimen>
+    <dimen name="space_result">10dp</dimen>
+    <dimen name="space_people">10dp</dimen>
+    <dimen name="people_height">40dp</dimen>
+    <dimen name="pepole_btn">66dp</dimen>
+</resources>

@@ -29,23 +29,21 @@ class MainActivity : AppCompatActivity() {
     /**
      * Выполняет основной расчет.
      * Функция обрабатывающая нажатие клавиши расчет.
-     * Пытается: Создать экземпляр класса Fuel
-     * и вызывать его атрибут result получая строку с результатом.
-     * Если не вышло -> результат "Ошибка ввода"
+     * Если ввод корректный создает экземпляр дата класса с полем result
+     * Если нет указывает что не так
      * Результат записывается в TextView. Выводит кнопку сохранить,
      * предлагая юзеру сохранить расчет. Если расчет не корректный, скроет кнопку сохранить.
      */
     private fun result () {
-        val res: String = try {
+        if (inputCheck()) {
             val km = binding.editTextKm.text.toString().toDouble()
             val cons = binding.editTextCons.text.toString().toDouble()
             val price = binding.editTextPrice.text.toString().toDouble()
             val people = binding.textViewPeople.text.toString().toInt()
-            Fuel(km, cons, price, people, getText(R.string.money).toString()).result
-        } catch (e: IllegalArgumentException) {
-            getText(R.string.inputError).toString()
+            val res = Fuel(km, cons, price, people, getText(R.string.money).toString()).result
+            binding.textViewResult.text = res
+            unFocusTextField()
         }
-        binding.textViewResult.text = res
     }
 
     /**
@@ -54,8 +52,8 @@ class MainActivity : AppCompatActivity() {
     private fun clear () {
         arrayOf(binding.editTextKm, binding.editTextCons, binding.editTextPrice).forEach {
             it.text = null
-            it.clearFocus()
         }
+        unFocusTextField()
         binding.textViewResult.text = getString(R.string.Null)
     }
 
@@ -78,6 +76,29 @@ class MainActivity : AppCompatActivity() {
      */
     private fun peopleChecking (people: Int): Boolean {
         return (people == 1 || people == -1)
+    }
+
+    /**
+     * Проверяет что поля заполнены
+     */
+    private fun inputCheck(): Boolean {
+        var flag = true
+        arrayOf(binding.editTextKm, binding.editTextCons, binding.editTextPrice).forEach {
+            if (it.text.isNullOrEmpty()) {
+                it.error = getString(R.string.inputError)
+                flag = false
+            }
+        }
+        return flag
+    }
+
+    /**
+     * Убирает фокус с текстовых полей
+     */
+    private fun unFocusTextField() {
+        arrayOf(binding.editTextKm, binding.editTextCons, binding.editTextPrice).forEach {
+            it.clearFocus()
+        }
     }
 }
 
