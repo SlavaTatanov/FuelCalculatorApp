@@ -9,6 +9,7 @@ import com.st.fuelcalculator.fuel.Fuel
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding :ActivityMainBinding
+    private var resultFuel: Fuel? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
 
         /*
         Блок устанавливает слушателей
@@ -40,8 +42,8 @@ class MainActivity : AppCompatActivity() {
             val cons = binding.editTextCons.text.toString().toDouble()
             val price = binding.editTextPrice.text.toString().toDouble()
             val people = binding.textViewPeople.text.toString().toInt()
-            val res = Fuel(km, cons, price, people, getText(R.string.money).toString()).result
-            binding.textViewResult.text = res
+            resultFuel = Fuel(km, cons, price, people, getText(R.string.money).toString())
+            binding.textViewResult.text = resultFuel!!.result
             unFocusTextField()
         }
     }
@@ -52,9 +54,11 @@ class MainActivity : AppCompatActivity() {
     private fun clear () {
         arrayOf(binding.editTextKm, binding.editTextCons, binding.editTextPrice).forEach {
             it.text = null
+            it.error = null
         }
         unFocusTextField()
         binding.textViewResult.text = getString(R.string.Null)
+        binding.textViewPeople.text = getString(R.string.peoplesInt)
     }
 
     /**
